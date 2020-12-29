@@ -1,0 +1,19 @@
+{
+  "name": "christmas-shuffle",
+  "version": "1.0.0",
+  "description": "Applet for making secret santa a little easier",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node index.js",
+    "webStart": "node index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.17",
+    "path": "^0.12.7"
+  }
+}

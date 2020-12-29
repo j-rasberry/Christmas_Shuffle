@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Christmas Shuffle</title>
+    <link rel="stylesheet" href="./css/main-style.css" type="text/css">
+
+</head>
+
+
+<body>
+    <header>
+        <h1>Christmas Shuffle</h1>
+        <div id="help">?</div>
+
+
+    </header>
+    <div id="Shuffle-Overlay-Wrapper" class="Overlay hidden">
+    </div>
+    <div id="Help-Overlay-Wrapper" class="Overlay hidden">
+    </div>
+
+    <div class="hidden" id="Input-Overlay-Guard">
+
+    </div>
+    <button onclick="addUser()">Add User</button>
+    <div id="users"></div>
+    <div id="button-array">
+        <button type="button" class="option-buttons" value="Save" onclick="save()">Save</button>
+        <button type="button" class="option-buttons" id="option-button-reset" value="Reset"
+            onclick="reset()">Reset</button>
+        <button type="button" class="option-buttons" value="Shuffle" onclick="shuffle()">Shuffle</button>
+    </div>
+
+</body>
+<script src="./controller/ux.controller.js"></script>
+
+</html>

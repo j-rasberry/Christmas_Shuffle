@@ -1,0 +1,141 @@
+:root {
+    --primary-color: #165b33;
+    --secondary-color: #146b3a;
+
+    --accent-color: #f8b229;
+    --background-color: #f5f5f5;
+    --font-color: #072011;
+    --reset-button-color: #bb2528;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    z-index: 1;
+
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+    color: var(--font-color)
+}
+
+h2 {
+    font-size: 25px;
+}
+
+header {
+    background: var(--primary-color);
+    height: 100px;
+}
+
+#help {
+    float: right;
+    border-radius: 50px;
+    border: 2px solid red;
+    width: 10px;
+    padding: 5px;
+
+}
+
+#help ::after {
+    clear: both;
+
+}
+
+#help:hover {
+    background: red;
+}
+
+#users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: auto auto;
+}
+
+.user {
+    background-color: var(--secondary-color);
+    width: minmax(500px, 1fr);
+    border: 1px solid black;
+    padding: 0 10px;
+    margin: 5px;
+
+
+}
+
+
+input {
+    height: 25px;
+
+
+}
+
+#button-array {
+    margin: 10px;
+}
+
+
+.option-buttons {
+    margin: 10px;
+    text-align: center;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+#option-button-reset {
+    background: var(--reset-button-color);
+}
+
+.Overlay {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: fixed;
+    top: calc((100vh - 60vh) / 2);
+    left: calc((100vw - 70vw) / 2);
+
+    height: 60vh;
+    width: 70vw;
+
+    background: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 5px 5px var(--secondary-color);
+}
+
+#Shuffle-Overlay img {
+
+    height: 60vh;
+    width: 70vw;
+
+}
+
+#Input-Overlay-Guard {
+    z-index: 2;
+    position: fixed;
+    /* background: black; */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+
+
+.hidden {
+    display: none;
+}
