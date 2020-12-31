@@ -55,20 +55,41 @@ header {
     background: red;
 }
 
+#add-user-button {
+    display: ;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+
+    background: var(--accent-color);
+    width: 200px;
+
+}
+
+#add-user-button h2 {
+    padding: 0;
+    margin: 0;
+}
+
+
 #users {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 90%;
+    width: 99%;
+    min-height: calc(100vh - 300px);
     margin: auto auto;
 }
 
 .user {
     background-color: var(--secondary-color);
-    width: minmax(500px, 1fr);
-    border: 1px solid black;
-    padding: 0 10px;
-    margin: 5px;
+    min-width: 30%;
+    min-height: 150px;
+    max-height: 150px;
+    border-radius: 25px;
+    padding: 20px;
+    margin: 10px;
 
 
 }
@@ -135,7 +156,22 @@ input {
 }
 
 
+/* Utility Style */
 
 .hidden {
     display: none;
+}
+
+.lock-scroll {
+
+    overflow: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

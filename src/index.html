@@ -19,19 +19,58 @@
     </header>
     <div id="Shuffle-Overlay-Wrapper" class="Overlay hidden">
     </div>
-    <div id="Help-Overlay-Wrapper" class="Overlay hidden">
+    <div id="Help-Overlay-Wrapper" class="Overlay ">
+
+        <!-- temp use -->
+        <div id="Help-Overlay ">
+
+            <h1 id="help-overlay-header">Help</h1>
+            <section id="help-overlay-body-wrapper">
+                <h2>What is Christmas Shuffle?</h2>
+                <p>Christmas Shuffle is an easy and intuitive way to organize a secret santa meetup. A big problem with
+                    secret santa that comes up when setting it up is that if everyone can't meet at once to draw names
+                    then
+                    its difficult to secretly give all particpants their gift buddies name. Christmas Shuffle aims to
+                    solve
+                    that problem. Gone are the days of </p>
+                <h2>How Does Christmas Shuffle work?</h2>
+                <p>Christmas Shuffle takes the names and emails of all the participants in a group. It uses a
+                    randomization
+                    algorithm to randomly generate a list of groups of two users. Soon after the shuffle is complete the
+                    an
+                    email will be sent to all of the participants with the name of the partner and any further
+                    information
+                    that you would like to add.</p>
+                <h2>How to use Christmas Shuffle?</h2>
+                To add a participant to the group, click the big yellow button on the top left corner of the screen. A
+                box
+                will appear with a placeholder name and email address. Double click the text of the item you would like
+                to
+                edit and type. To confirm the information that you have entered simply click off anywhere on the page.
+                <h3>Other Help Information</h3>
+            </section>
+
+            <button onclick="helpReset();">Done</button>
+        </div>
+
+
+
     </div>
 
     <div class="hidden" id="Input-Overlay-Guard">
 
     </div>
-    <button onclick="addUser()">Add User</button>
+    <div class="noselect" id="add-user-button" onclick="addUser()">
+        <h2>+</h2>Add User
+    </div>
     <div id="users"></div>
     <div id="button-array">
-        <button type="button" class="option-buttons" value="Save" onclick="save()">Save</button>
+        <button type="button" class="option-buttons" value="Save" onclick="save()" id="add-user-button">Save</button>
+
+        <button type="button" class="option-buttons" value="Shuffle" onclick="shuffle()"
+            id="add-user-button">Shuffle</button>
         <button type="button" class="option-buttons" id="option-button-reset" value="Reset"
             onclick="reset()">Reset</button>
-        <button type="button" class="option-buttons" value="Shuffle" onclick="shuffle()">Shuffle</button>
     </div>
 
 </body>

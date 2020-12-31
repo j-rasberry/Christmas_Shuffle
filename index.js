@@ -4,7 +4,7 @@ const app = new express();
 const port = 3000;
 const PATH = require('path');
 require('dotenv').config();
-app.use('/home', express.static(__dirname + "/src"));
+app.use('/', express.static(__dirname + "/src"));
 
 // app.get('/', function (req, res) {
 //     //app.send(index.html)
@@ -18,8 +18,8 @@ var transport = mail.createTransport({
     host: process.env.transport_host_name,
     port: process.env.transport_port,
     auth: {
-        user: transport_auth_user ,
-        pass: transport_auth_pass
+        user: process.env.transport_auth_user,
+        pass: process.env.transport_auth_pass
     }
 });
 
