@@ -34,7 +34,7 @@ function shuffle() {
 
     document.getElementById('Shuffle-Overlay-Wrapper').innerHTML = `
         <div id="Shuffle-Overlay ">
-            <img src="https://media.giphy.com/media/3o6fJdYXEvMa5ZmlI4/source.gif" >
+            <img src="./res/marry_christmas.webp" >
             <p>Emails Sent! Thank you for using Christmas Shuffle.</p>
             <button onclick="shuffleReset();">Shuffle Again</button>
         </div>
@@ -66,15 +66,12 @@ function reset() {
 
 document.getElementById('help').addEventListener('click', function () {
     displayHelpInformation();
-
 });
 
 function displayHelpInformation() {
     document.getElementById('Help-Overlay-Wrapper').innerHTML = `
-        <div id="Help-Overlay ">
-        
+        <section id="help-overlay-body-wrapper" class="scroll-none">
         <h1 id="help-overlay-header">Help</h1>
-        <section id="help-overlay-body-wrapper">
             <h2>What is Christmas Shuffle?</h2>
             <p>Christmas Shuffle is an easy and intuitive way to organize a secret santa meetup. A big problem with
                 secret santa that comes up when setting it up is that if everyone can't meet at once to draw names
@@ -99,15 +96,20 @@ function displayHelpInformation() {
             <h3>Other Help Information</h3>
         </section>
 
-        <button onclick="helpReset();">Done</button> sudo apt 
-        </div>
+        <button onclick="helpReset();">Done</button> 
+
         `;
     document.getElementById('Help-Overlay-Wrapper').classList.remove('hidden');
+
+    document.querySelector('body').classList.add('lock-scroll');
+    document.getElementById('Input-Overlay-Guard').classList.remove('hidden');
 }
 
 function helpReset() {
     document.getElementById('Help-Overlay-Wrapper').innerHTML = "";
     document.getElementById('Help-Overlay-Wrapper').classList.add('hidden');
+    document.getElementById('Input-Overlay-Guard').classList.add('hidden');
+    document.querySelector('body').classList.remove('lock-scroll');
 
 
 };

@@ -32,11 +32,20 @@ h2 {
     font-size: 25px;
 }
 
+/* Header */
 header {
     background: var(--primary-color);
-    height: 100px;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
 }
 
+header h1 {
+    color: white;
+
+}
+
+/* Help Button  */
 #help {
     float: right;
     border-radius: 50px;
@@ -55,6 +64,22 @@ header {
     background: red;
 }
 
+/* help Overlay */
+#Help-Overlay-Wrapper {
+    height: 60vh;
+    width: 70vw;
+}
+
+
+
+#help-overlay-body-wrapper {
+
+    height: 90%;
+    width: 90%;
+    overflow-y: scroll;
+}
+
+/* Add User Button */
 #add-user-button {
     display: ;
     margin: 20px;
@@ -72,7 +97,7 @@ header {
     margin: 0;
 }
 
-
+/* User Input Area */
 #users {
     display: flex;
     flex-wrap: wrap;
@@ -97,28 +122,30 @@ header {
 
 input {
     height: 25px;
-
-
 }
 
+/* Save, Shuffle, Reset Button Array */
 #button-array {
     margin: 10px;
 }
 
+#button-array div {
+    display: inline;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+}
 
 .option-buttons {
-    margin: 10px;
     text-align: center;
-    height: 40px;
     background-color: white;
-    border-radius: 10px;
-
 }
 
 #option-button-reset {
     background: var(--reset-button-color);
 }
 
+/* General Overlay */
 .Overlay {
     z-index: 3;
     display: flex;
@@ -138,6 +165,7 @@ input {
     box-shadow: 5px 5px var(--secondary-color);
 }
 
+/* Shuffle Overlay */
 #Shuffle-Overlay img {
 
     height: 60vh;
@@ -145,15 +173,6 @@ input {
 
 }
 
-#Input-Overlay-Guard {
-    z-index: 2;
-    position: fixed;
-    /* background: black; */
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-}
 
 
 /* Utility Style */
@@ -163,8 +182,18 @@ input {
 }
 
 .lock-scroll {
-
     overflow: hidden;
+}
+
+.scroll-none {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scroll-none ::-webkit-scrollbar {
+    display: none;
 }
 
 .noselect {
@@ -174,4 +203,15 @@ input {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* Disables interaction all elements other than the popup window. */
+#Input-Overlay-Guard {
+    z-index: 2;
+    position: fixed;
+    /* background: black; */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
 }
