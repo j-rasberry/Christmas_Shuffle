@@ -1,7 +1,9 @@
 function shuffle() {
     var allPaired = false;
     let pairCounter = 0;
-    var pairedList = []
+    var pairedList = [
+        [0, 0, 0]
+    ]
 
     //Checks if the amount of participants is odd. If odd error
     if (usersInformation.length % 2 != 0) {
@@ -19,11 +21,6 @@ function shuffle() {
                 //pairedList[pairingAssignment][pairedList.fill(uInfoArray[0], 0, 0)]
 
             });
-            //pairedList.push([paringAssignment, uID1, uID2])
-
-            //pairedList[paringAssignment][pairedList.fill(uInfoArray[0], 0, 0)]
-
-            //usersInformation[uInfoArray[0]][3] = true;
             pairCounter++;
             //Breaks while loop if usersInformation Sorted Bool = True
 
@@ -52,10 +49,15 @@ function shuffle() {
 }
 
 function checkAssignment(uInfoArray, pairedList, pairingAssignment) {
-    var paired = true;
+    var paired = false;
+    console.log("Pairedlist called");
+
 
     pairedList.forEach(pairing => {
+
         pairingBreak: if (pairing[0] == pairingAssignment) {
+            console.log(pairing[0] + " | " + pairingAssignment);
+
             paired = true;
             if (pairing[1] == null) {
                 pairing.fill(uInfoArray[0], 1, 1);
@@ -69,7 +71,6 @@ function checkAssignment(uInfoArray, pairedList, pairingAssignment) {
 
 
         }
-        paired = false;
     })
 
     if (paired = false) {
