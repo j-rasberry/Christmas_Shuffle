@@ -14,7 +14,7 @@ function addUser() {
        */
 
 
-    usersInformation.push([totalUsers, "PLACEHOLDER_NAME", "PLACEHOLDER_EMAIL@EMAIL.COM"]);
+    usersInformation.push([totalUsers, "PLACEHOLDER_NAME", "PLACEHOLDER_EMAIL@EMAIL.COM", false]);
 
     document.getElementById('users').innerHTML += `
          <div class="user">
@@ -30,21 +30,7 @@ function addUser() {
     totalUsers++;
 }
 
-function shuffle() {
 
-    document.getElementById('Shuffle-Overlay-Wrapper').innerHTML = `
-        <div id="Shuffle-Overlay ">
-            <img src="./res/marry_christmas.webp" >
-            <p>Emails Sent! Thank you for using Christmas Shuffle.</p>
-            <button onclick="shuffleReset();">Shuffle Again</button>
-        </div>
-        `;
-    document.querySelector('body').classList.add('lock-scroll');
-
-    document.getElementById('Shuffle-Overlay-Wrapper').classList.remove('hidden');
-    document.getElementById('Input-Overlay-Guard').classList.remove('hidden');
-
-}
 
 function shuffleReset() {
     document.getElementById('Shuffle-Overlay-Wrapper').innerHTML = "";

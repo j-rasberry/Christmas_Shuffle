@@ -6,6 +6,9 @@
     --background-color: #f5f5f5;
     --font-color: #072011;
     --reset-button-color: #bb2528;
+
+    --button-color: #DAA520;
+    --button-color-active: #bb8a0f;
 }
 
 body {
