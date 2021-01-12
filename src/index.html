@@ -22,14 +22,18 @@
     <div id="Help-Overlay-Wrapper" class="Overlay hidden">
     </div>
     </div>
-
     <div class="hidden" id="Input-Overlay-Guard">
-
     </div>
     <div class="noselect" id="add-user-button" onclick="addUser()">
         <h2>+</h2>Add User
     </div>
-    <div id="users"></div>
+    <div id="users">
+        <form method="POST" action="./api" id="user-info-form">
+        </form>
+    </div>
+
+  
+
     <div id="button-array">
         <div class="option-buttons noselect" onclick="save()" id="add-user-button">Save</div>
         <div class="option-buttons noselect" onclick="shuffle()" id="add-user-button">Shuffle</div>

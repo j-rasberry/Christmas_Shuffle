@@ -15,17 +15,15 @@ function addUser() {
 
 
     usersInformation.push([totalUsers, "PLACEHOLDER_NAME", "PLACEHOLDER_EMAIL@EMAIL.COM", false]);
+console.log(totalUsers);
 
-    document.getElementById('users').innerHTML += `
-         <div class="user">
+// document.getElementById('users').innerHTML =+ `
+//     // <input typ  id="username_` + totalUsers + `"></input>
+//     <input type="email"  id="email_` + totalUsers + `"></input>
+   
 
-    <div>
-        <img src="" alt="">
-        <h2 ondblclick="editName(` + totalUsers + `)" id="username_` + totalUsers + `">Username</h2>
-        <h3 ondblclick="editEmail(` + totalUsers + `)" id="email_` + totalUsers + `">PLACEHODLER_EMAIL@EMAIL.COM<h3>
-    </div>
-</div>
-         `
+// `;
+document.getElementById('user-info-form').innerHTML += "<input type='text' id='username_"+totalUsers+"'> <input type='email' id='email_"+totalUsers+"'>"
 
     totalUsers++;
 }

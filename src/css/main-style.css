@@ -84,7 +84,7 @@ header h1 {
 
 /* Add User Button */
 #add-user-button {
-    display: ;
+    /* display: ; */
     margin: 20px;
     padding: 10px;
     border-radius: 25px;
@@ -95,7 +95,7 @@ header h1 {
 
 }
 
-#add-user-button h2 {
+#add-user-button input {
     padding: 0;
     margin: 0;
 }
