@@ -10,29 +10,26 @@
 </head>
 
 
+
 <body>
     <header>
         <h1>Christmas Shuffle</h1>
-        <div id="help">?</div>
+        <div id="help" onclick="overlay('Help-Overlay-Wrapper');">?</div>
 
 
     </header>
-    <div id="Shuffle-Overlay-Wrapper" class="Overlay hidden">
-    </div>
-    <div id="Help-Overlay-Wrapper" class="Overlay hidden">
-    </div>
-    </div>
+    <div id="Overlay-Wrapper"></div>
     <div class="hidden" id="Input-Overlay-Guard">
     </div>
     <div class="noselect" id="add-user-button" onclick="addUser()">
         <h2>+</h2>Add User
     </div>
-    <div id="users">
-        <form method="POST" action="./api" id="user-info-form">
-        </form>
-    </div>
 
-  
+    <form method="POST" action="./api" id="user-info-form" class="users">
+    </form>
+
+
+
 
     <div id="button-array">
         <div class="option-buttons noselect" onclick="save()" id="add-user-button">Save</div>
