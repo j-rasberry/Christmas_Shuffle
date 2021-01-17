@@ -2,16 +2,24 @@ var totalUsers = 0;
 
 function addUser() {
 
+
+
+
     document.getElementById('user-info-form').insertAdjacentHTML('beforeend', `
     <div class='user'>
-    <input type='text' id='username_` + totalUsers + `' name='userInfo_` + totalUsers + `'  placeholder=' Username ' autocomplete="off"> 
-    <input type='email' id='email_` + totalUsers + `' name='userInfo_` + totalUsers + `' placeholder=' Email Address ' autocomplete="off">
+    <input type='text' id='username_` + totalUsers + `' name='userInfo'  placeholder=' Username ' autocomplete="off" value="asedf` + totalUsers + `"> 
+    <input type='email' id='email_` + totalUsers + `' name='userInfo' placeholder=' Email Address ' autocomplete="off" value="asdf@email` + totalUsers + `">
     </div>
     `)
     totalUsers++;
+
+
 }
 
 function shuffle() {
+    document.getElementById('user-info-form').insertAdjacentHTML('beforeend', `
+<input type='text' value='` + totalUsers + `' name='totalUsers' hidden'> 
+`)
     document.getElementById('user-info-form').submit();
 }
 
