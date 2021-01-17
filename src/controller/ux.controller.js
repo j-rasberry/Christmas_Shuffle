@@ -1,18 +1,19 @@
 var totalUsers = 0;
 
 function addUser() {
-    for (let i = 0; i < 100; i++) {
 
 
 
-        document.getElementById('user-info-form').insertAdjacentHTML('beforeend', `
+
+    document.getElementById('user-info-form').insertAdjacentHTML('beforeend', `
     <div class='user'>
     <input type='text' id='username_` + totalUsers + `' name='userInfo'  placeholder=' Username ' autocomplete="off" value="asedf` + totalUsers + `"> 
     <input type='email' id='email_` + totalUsers + `' name='userInfo' placeholder=' Email Address ' autocomplete="off" value="asdf@email` + totalUsers + `">
     </div>
     `)
-        totalUsers++;
-    }
+    totalUsers++;
+
+
 }
 
 function shuffle() {
