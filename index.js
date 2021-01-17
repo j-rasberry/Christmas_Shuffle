@@ -37,7 +37,7 @@ app.post('/api', (req, res, next) => {
         var pairedUserInfo = [];
         pairedCounter = 0;
         //Checks if the amount of participants is odd. If odd error
-        if (sortedUserInfo.length % 2 != 0) {
+        if (sortedUserInfo.length % 2 == 0) {
             while (sorting) {
                 entry1 = Math.floor(Math.random() * sortedUserInfo.length);
                 entry2 = Math.floor(Math.random() * sortedUserInfo.length);
