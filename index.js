@@ -4,8 +4,11 @@ const app = new express();
 const port = 3000;
 const PATH = require('path');
 const bodyParser = require("body-parser");
-
-var userInput = []
+const {
+    send
+} = require('process');
+var pairedUserInfo = [];
+// var userInput = []
 require('dotenv').config();
 
 
@@ -17,7 +20,7 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + "/src"));
 
 app.get('/get/info', (req, res) => {
-    res.send(userInput)
+    res.send(pairedUserInfo)
 })
 
 app.post('/api', (req, res, next) => {
@@ -34,7 +37,7 @@ app.post('/api', (req, res, next) => {
         }
         var entry1, entry2 = 0;
         var sorting = true;
-        var pairedUserInfo = [];
+        pairedUserInfo = [];
         pairedCounter = 0;
         //Checks if the amount of participants is odd. If odd error
         if (sortedUserInfo.length % 2 == 0) {
@@ -65,13 +68,15 @@ app.post('/api', (req, res, next) => {
 
     },
     function (req, res) {
-
+        sendEmail(pairedUserInfo)
         res.redirect("./..")
     })
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
 
 var transport = mail.createTransport({
     host: process.env.transport_host_name,
@@ -83,19 +88,42 @@ var transport = mail.createTransport({
 });
 
 
-var mailOptions = {
-    from: '',
-    to: '',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+var mailOptions;
+
+function sendEmail(pairedUserInfoList) {
+    pairedUserInfoList.forEach(listentry => {
+
+        mailOptions = {
+            from: '"Christmas Shuffle" <' + process.env.transport_from_email + '>',
+            to: listentry[1],
+            subject: 'Time For A Christmas Shuffle!',
+            text: 'Dear ' + listentry[0] + ',\nYou are being contacted because you are been entered into a christmas shuffle. The person you are responsible for is ' + listentry[2] + ''
+        }
+        transport.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        mailOptions = {
+            from: '"Christmas Shuffle" <' + process.env.transport_from_email + '>',
+            to: listentry[3],
+            subject: 'Time For A Christmas Shuffle!',
+            text: 'Dear ' + listentry[2] + ',\nYou are being contacted because you are been entered into a christmas shuffle. The person you are responsible for is ' + listentry[0] + ''
+
+        }
+        transport.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
+        console.log(listentry);
+
+    });
 }
 
-// transport.sendMail(mailOptions, function (error, info) {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ' + info.response);
-//     }
-// });
 
 console.log('Server sent message but, not really.');

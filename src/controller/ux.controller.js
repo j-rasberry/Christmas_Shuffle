@@ -20,6 +20,8 @@ function shuffle() {
     document.getElementById('user-info-form').insertAdjacentHTML('beforeend', `
 <input type='text' value='` + totalUsers + `' name='totalUsers' hidden'> 
 `)
+
+
     document.getElementById('user-info-form').submit();
 }
 
@@ -115,7 +117,7 @@ function overlayReset(overlayID) {
 
 
 
-var doNotAskAgainReset = false;
+var doNotAskAgainReset = true;
 
 function isChecked(checkboxID) {
     if (checkboxID == true) {

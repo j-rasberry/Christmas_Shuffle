@@ -5,7 +5,7 @@
 ## How to install?
 
 - Clone git repository
-- Rename .env.bak to .env
+- Rename .env.bak to .env and configure to your current needs
 - Run command 'npm i'. !!Node is required to run this software.!!
 - Run command 'npm start'. !!Node is required to run this software.!!
 
